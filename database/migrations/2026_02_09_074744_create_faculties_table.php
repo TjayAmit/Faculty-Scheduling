@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('gender')->nullable();
             $table->string('marital_status')->nullable();
             $table->string('nationality')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -33,6 +34,10 @@ return new class extends Migration
      */
     public function down(): void
     {
+        Schema::table('faculties', function (Blueprint $table) {
+            $table->dropSoftDeletes();
+        });
+
         Schema::dropIfExists('faculties');
     }
 };
