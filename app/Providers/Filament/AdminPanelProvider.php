@@ -54,6 +54,12 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->navigationGroups([
+                'Schedule Management',
+                'Profile Management',
+                'User Management'
+            ])
+            ->collapsibleNavigationGroups(false);
     }
 }

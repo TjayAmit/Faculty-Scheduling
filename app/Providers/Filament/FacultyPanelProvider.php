@@ -52,6 +52,7 @@ class FacultyPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->collapsibleNavigationGroups(false);
     }
 }

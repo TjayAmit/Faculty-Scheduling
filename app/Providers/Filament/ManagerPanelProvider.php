@@ -53,6 +53,7 @@ class ManagerPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->collapsibleNavigationGroups(false);
     }
 }
